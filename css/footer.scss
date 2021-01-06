@@ -1,0 +1,76 @@
+@mixin flex($dir) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+}
+footer {
+  background-color: hsl(243, 87%, 12%);
+  width: 100%;
+  color: white;
+  @include flex(row);
+  justify-content: space-evenly;
+  .footer-item1 {
+    margin: 2%;
+    padding: 4%;
+    width: auto;
+    @include flex(column);
+    img {
+      filter: invert(100%);
+      margin: 2% 0;
+    }
+    .footer-div {
+      width: 100%;
+      @include flex(row);
+      text-align: left;
+      img {
+        filter: invert(0);
+        margin: 1% 2%;
+      }
+      p {
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+  }
+  .footer-item {
+    margin: 2%;
+    padding: 4%;
+    width: auto;
+    @include flex(column);
+    p{
+      width: 100%;
+      list-style-type: none;
+      padding: 2%;
+      margin: 2%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  footer {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: left;
+    .footer-item1 {
+      width: auto;
+      justify-content: left;
+      text-align: left;
+      .footer-div {
+        width: 100%;
+        justify-content: left;
+        text-align: left;
+      }
+    }
+    .footer-item {
+      width: auto;
+      justify-content: left;
+      text-align: left;
+     margin: 2%;
+    padding: 4%;
+    }
+  }
+}

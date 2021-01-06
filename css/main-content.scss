@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+@mixin flex($dir) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  background-image: url("../images/bg-curve-desktop.svg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  @include flex(row);
+  .left-block {
+    width: 70%;
+    padding: 5%;
+    @include flex(column);
+    justify-content: flex-start;
+    align-items: flex-start;
+    .header {
+      font-size: 30px;
+      font-weight: bolder;
+      width: 100%;
+      margin: 2%;
+      padding: 0 2%;
+    }
+    .small-text {
+      font-size: 16px;
+      font-weight: 500;
+      width: 80%;
+      margin: 2%;
+      padding: 0 2%;
+      span a {
+        padding: 2% 0;
+        width: 100%;
+        color: hsl(170, 45%, 43%);
+        text-decoration: underline hsl(170, 45%, 43%);
+      }
+    }
+    .card {
+      background-color: white;
+      width: 80%;
+      @include flex(column);
+      align-items: flex-start;
+      border-radius: 10px;
+      margin: 2%;
+      padding: 0 2%;
+      img {
+        margin: 0;
+        margin-top: 5%;
+        padding: 0 5%;
+        width: 30px;
+        height: 30px;
+      }
+      p {
+        margin: 0;
+        padding: 1% 5%;
+        font-size: 18px;
+      }
+      .name-container {
+        margin: 1%;
+        padding: 1% 5%;
+        width: 100%;
+        @include flex(row);
+        justify-content: flex-start;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin: 1%;
+          padding: 0;
+        }
+        p {
+          margin: 1%;
+          padding: 0;
+          font-size: 18px;
+          font-weight: bolder;
+        }
+        span {
+          font-size: 15px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+  .right-block {
+    width: 50%;
+    padding: 5%;
+    img {
+      width: 450px;
+      height: 350px;
+    }
+  }
+}
+.second-section {
+  @include flex(row);
+  width: 100%;
+  background-color: hsl(238, 22%, 44%);
+  .left-block {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 2% 4%;
+    .header {
+      font-size: 30px;
+      font-weight: bolder;
+      width: 80%;
+      margin: 2%;
+      margin-bottom: 1%;
+      padding: 0 2%;
+      color: white;
+    }
+    .small-text {
+      font-size: 16px;
+      font-weight: 500;
+      width: auto;
+      margin: 2%;
+      margin-top: 1%;
+      padding: 0 2%;
+      color: hsl(170, 9%, 86%);
+    }
+  }
+  .right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 40%;
+    margin: 2% 4%;
+    .btns {
+      width: 220px;
+      padding: 1% 2%;
+      margin: 1% ;
+      background-color: hsl(224, 93%, 58%);
+      color: white;
+      outline: none;
+      border: 1px solid hsl(224, 93%, 58%);
+      border-radius: 5px;
+      font-size: 14px;
+      &:hover {
+        background-color: hsla(224, 93%, 58%, 0.842);
+      }
+    }
+    input[type="text"] {
+      width: 280px;
+      font-size: 13px;
+      outline: none;
+      border: 1px solid gray;
+      padding: 1% 2%;
+      margin: 1% ;
+      &:hover {
+        border: 1px solid hsla(224, 93%, 58%, 0.842);
+      }
+    }
+  }
+}
+@media screen and (max-width: 475px) {
+  .main-content {
+    background-image: url("../images/bg-curve-mobile.svg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    padding: 0 10%;
+    @include flex(column-reverse);
+    .left-block {
+      width: 100%;
+      padding: 10%;
+      margin: 3% auto;
+      @include flex(column);
+      .header {
+        font-size: 22px;
+      }
+      .small-text {
+        font-size: 16px;
+        width: 100%;
+        span a {
+          padding: 2% 0;
+          width: 100%;
+          color: hsl(170, 45%, 43%);
+          text-decoration: underline hsl(170, 45%, 43%);
+        }
+      }
+      .card {
+        background-color: hsl(240, 75%, 98%);
+        width: 100%;
+        img {
+          width: 28px;
+          height: 28px;
+        }
+        p {
+          font-size: 16px;
+        }
+        .name-container {
+          img {
+            width: 30px;
+            height: 30px;
+          }
+          p {
+            font-size: 16px;
+          }
+          span {
+            font-size: 13px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .right-block {
+      @include flex(column);
+      width: 100%;
+      padding: 5%;
+      margin: 3% auto;
+      img {
+        width: 180px;
+        height: 150px;
+      }
+    }
+  }
+.second-section {
+  @include flex(column);
+  justify-content: center;
+  height: 50vh;
+  width: 100%;
+  padding: 0 10%;
+  text-align: center;
+  .left-block {
+    width: 100%;
+    margin: 2% 4%;
+    .header {
+      font-size: 25px;
+      width: auto;
+    }
+    .small-text {
+      font-size: 16px;
+      width: auto;
+    }
+  }
+  .right-block {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5%;
+    .btns {
+      width: 220px;
+      height: 30px;
+    }
+    input[type="text"] {
+      width: 200px;
+      height: 23px;
+    }
+  }
+}
+}
